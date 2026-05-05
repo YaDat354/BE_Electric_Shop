@@ -1,21 +1,26 @@
 {
   "name": "be_electric_shop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "sequelize": "sequelize",
+    "db:init": "sequelize init",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
+    "db:seed": "sequelize db:seed:all",
+    "db:seed:undo": "sequelize db:seed:undo:all"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YaDat354/BE_Electric_Shop.git"
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/YaDat354/BE_Electric_Shop/issues"
-  },
-  "homepage": "https://github.com/YaDat354/BE_Electric_Shop#readme"
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "sequelize-cli": "^6.6.3"
+  }
 }
