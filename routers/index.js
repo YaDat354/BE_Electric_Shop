@@ -38,7 +38,9 @@ rootRouter.use('/payment', paymentRouter);
 rootRouter.use('/notifications', notificationsRouter);
 rootRouter.use('/protranslations', proTranslationRouter);
 rootRouter.use('/chat', chatRouter);
+rootRouter.use('/flashsales', flashsalesRouter);
+rootRouter.use('/flashsaledetails', flashsaledetailsRouter);
 
 module.exports = {
-rootRouter
+  rootRouter
 };
