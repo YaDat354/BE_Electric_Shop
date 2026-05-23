@@ -1,40 +1,28 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Notifications', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      userid: {
-        type: Sequelize.INTEGER
-      },
-      type: {
-        type: Sequelize.STRING
-      },
-      messagekey: {
-        type: Sequelize.STRING
-      },
-      relatedid: {
-        type: Sequelize.INTEGER
-      },
-      isread: {
-        type: Sequelize.BOOLEAN
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
-  },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Notifications');
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+  class Notifications extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
+  Notifications.init(
+    {
+      userid: DataTypes.INTEGER,
+      type: DataTypes.STRING, // 'review', 'order', 'promotion', ...
+      messagekey: DataTypes.STRING,
+      relatedid: DataTypes.INTEGER,
+      isread: DataTypes.BOOLEAN,
+    },
+    {
+      sequelize,
+      modelName: "Notifications",
+    }
+  );
+  return Notifications;
 };

@@ -11,4 +11,6 @@ paymentRouter.post("/create-qr", createPayment);
 paymentRouter.get("/check-payment-vnpay", checkPaymentVNPAY);
 paymentRouter.get("/paypal/check-payment-paypal", checkPaymentPaypal);
 
-module.exports = paymentRouter;
+module.exports = {
+  paymentRouter
+};

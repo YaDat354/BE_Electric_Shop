@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { categoriesRouter } = require('./categories.routers');
 const { usersRouter } = require('./users.routers');
 const { roleRouter } = require('./roles.routers');
@@ -12,7 +13,7 @@ const { orderRouter } = require('./orders.routers');
 const { orderdetailRouter } = require('./orderdetails.routers');
 const { imgproductRouter } = require('./imagesproduct.routers');
 const { imguserRouter } = require('./imagesuser.routers');
-const paymentRouter = require('./payment.routers');
+const { paymentRouter } = require('./payment.routers');
 const { notificationsRouter } = require('./notifications.router');
 const { proTranslationRouter } = require('./protranslation.routers');
 const { chatRouter } = require('./chatRouter');
@@ -20,6 +21,26 @@ const { flashsalesRouter } = require('./flashsales.routers');
 const { flashsaledetailsRouter } = require('./flashsaledetails.routers');
 
 const rootRouter = express.Router();
+
+console.log(typeof categoriesRouter);
+console.log(typeof usersRouter);
+console.log(typeof roleRouter);
+console.log(typeof productRouter);
+console.log(typeof reviewsRouter);
+console.log(typeof promotionsRouter);
+console.log(typeof cartsRouter);
+console.log(typeof grnRouter);
+console.log(typeof grndetailsRouter);
+console.log(typeof orderRouter);
+console.log(typeof orderdetailRouter);
+console.log(typeof imgproductRouter);
+console.log(typeof imguserRouter);
+console.log(typeof paymentRouter);
+console.log(typeof notificationsRouter);
+console.log(typeof proTranslationRouter);
+console.log(typeof chatRouter);
+console.log(typeof flashsalesRouter);
+console.log(typeof flashsaledetailsRouter);
 
 rootRouter.use('/categories', categoriesRouter);
 rootRouter.use('/users', usersRouter);
