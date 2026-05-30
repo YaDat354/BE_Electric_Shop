@@ -22,7 +22,7 @@ const publicPathDirectory = path.join(__dirname, './public');
 app.use(express.static(publicPathDirectory));
 
 // API routes
-app.use('/api/v1', rootRouter);
+app.use(['/api', '/api/v1'], rootRouter);
 
 // Optional homepage
 app.get('/', (req, res) => {

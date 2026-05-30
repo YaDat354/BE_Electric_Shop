@@ -16,38 +16,38 @@ module.exports = {
       'categories',
       [
         {
-          name: 'Racket',
-          description: 'Các loại vợt cầu lông chất lượng cao từ các thương hiệu nổi tiếng.',
+          name: 'Smartphones',
+          description: 'Điện thoại thông minh từ các thương hiệu hàng đầu, phù hợp cho liên lạc, giải trí và làm việc.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Shoes',
-          description: 'Giày chuyên dụng cho cầu lông, thiết kế nhẹ, thoáng khí và bám sân tốt.',
+          name: 'Laptops',
+          description: 'Laptop cấu hình đa dạng cho học tập, văn phòng và giải trí với thiết kế mỏng nhẹ.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Clothes',
-          description: 'Bộ sưu tập quần áo thể thao dành cho người chơi cầu lông, thoáng mát và thoải mái.',
+          name: 'Tablets',
+          description: 'Máy tính bảng tiện dụng, màn hình sắc nét và pin lâu cho nhu cầu xem phim, học online và đọc sách.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Bags',
-          description: 'Bao đựng vợt cầu lông với nhiều kích cỡ và kiểu dáng đa dạng.',
+          name: 'Accessories',
+          description: 'Phụ kiện điện tử thiết yếu như sạc, tai nghe, chuột, bàn phím và cáp kết nối.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Shuttlecock',
-          description: 'Các loại cầu lông với chất liệu và độ bền khác nhau, phù hợp cho luyện tập và thi đấu.',
+          name: 'Smart Home',
+          description: 'Thiết bị nhà thông minh giúp điều khiển đèn, camera, âm thanh và các thiết bị gia dụng.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Others',
-          description: 'Phụ kiện và thiết bị khác liên quan đến cầu lông.',
+          name: 'Audio & Peripherals',
+          description: 'Thiết bị âm thanh và phụ kiện chơi game, từ tai nghe đến soundbar và bàn phím.',
           createdAt: new Date(),
           updatedAt: new Date()
         }
