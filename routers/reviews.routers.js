@@ -6,14 +6,16 @@ const {
   getDetailReviews,
   getAllReviewsbyProductid,
 } = require("../controllers/reviews.controllers");
+const { validate } = require('../middlewares/validation/requestValidator');
+const { idParamSchema, productIdParamSchema, createReviewSchema, updateReviewSchema } = require('../middlewares/validation/schemas');
 
 const reviewsRouter = express.Router();
 
-reviewsRouter.post("/", createReviews);
-reviewsRouter.get("/:productid", getAllReviewsbyProductid);
+reviewsRouter.post("/", validate(createReviewSchema), createReviews);
+reviewsRouter.get("/:productid", validate(productIdParamSchema, 'params'), getAllReviewsbyProductid);
 // reviewsRouter.get("/:id", getDetailReviews);
-reviewsRouter.put("/:id", updateReviews);
-reviewsRouter.delete("/:id", deleteReviews);
+reviewsRouter.put("/:id", validate(idParamSchema, 'params'), validate(updateReviewSchema), updateReviews);
+reviewsRouter.delete("/:id", validate(idParamSchema, 'params'), deleteReviews);
 
 module.exports = {
   reviewsRouter,

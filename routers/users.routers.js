@@ -13,20 +13,46 @@ const {
 } = require('../controllers/users.controllers');
 const { authenticate } = require('../middlewares/auth/authenticate');
 const { handlechat } = require('../services/chatbot');
+const { validate } = require('../middlewares/validation/requestValidator');
+const {
+  idParamSchema,
+  roleIdParamSchema,
+  usernameParamSchema,
+  createUserSchema,
+  updateUserSchema,
+  loginSchema,
+  changePasswordSchema,
+  forgotPasswordSchema
+} = require('../middlewares/validation/schemas');
 
 const usersRouter = express.Router();
 
-usersRouter.post('/', createUsers);
-usersRouter.post('/login', login);
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     tags: [Users]
+ *     summary: Create user
+ */
+usersRouter.post('/', validate(createUserSchema), createUsers);
+usersRouter.post('/login', validate(loginSchema), login);
+usersRouter.post('/changepass', authenticate, validate(changePasswordSchema), changePassword);
+usersRouter.post('/forgotpass', validate(forgotPasswordSchema), forgotPassword);
 usersRouter.get('/', getAllUsers);
-usersRouter.get('/:id', getDetailUsers);
-usersRouter.put('/:id', updateUsers);
-usersRouter.delete('/:id', deleteUsers);
-usersRouter.get('/username/:username', getDetailUsersByUsername);
-usersRouter.post('/changepass', authenticate, changePassword);
-usersRouter.post('/forgotpass', forgotPassword);
 usersRouter.post('/chatbot', handlechat);
-usersRouter.get('/role/:roleid', getUsersByRoleId);
+usersRouter.get('/username/:username', validate(usernameParamSchema, 'params'), getDetailUsersByUsername);
+usersRouter.get('/role/:roleid', validate(roleIdParamSchema, 'params'), getUsersByRoleId);
+usersRouter.get('/:id', validate(idParamSchema, 'params'), getDetailUsers);
+
+/**
+ * @swagger
+ * /users/{id}:
+ *   put:
+ *     tags: [Users]
+ *     summary: Update user
+ */
+usersRouter.put('/:id', validate(idParamSchema, 'params'), validate(updateUserSchema), updateUsers);
+usersRouter.delete('/:id', validate(idParamSchema, 'params'), deleteUsers);
 
 module.exports = {
   usersRouter

@@ -6,13 +6,13 @@ create table documents (
   id bigserial primary key,
   content text,
   metadata jsonb,
-  embedding vector(768)
+  embedding vector(3072)
 );
 
 drop function if exists match_documents;
 
 create or replace function match_documents (
-  query_embedding vector(768),
+  query_embedding vector(3072),
   match_threshold float,
   match_count int
 )

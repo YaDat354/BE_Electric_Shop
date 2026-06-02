@@ -174,3 +174,32 @@ npm run dev
 ```
 
 Server sẽ khởi động tại `http://localhost:3000`
+
+### 11. Swagger API Docs
+
+Sau khi chạy server, tài liệu API có thể truy cập tại:
+
+```bash
+http://localhost:3000/api-docs
+```
+
+Swagger đang mô tả các endpoint chính cho luồng thêm/cập nhật/điều chỉnh dữ liệu như Products, Carts, Orders, GRN, GRN Details, Payment.
+
+### 12. Input Validation
+
+Project đã tích hợp kiểm tra input ở tầng router bằng Joi middleware.
+
+- Nếu payload hợp lệ: request tiếp tục vào controller.
+- Nếu payload không hợp lệ: API trả về `400` với format:
+
+```json
+{
+  "message": "Validation failed",
+  "errors": [
+    {
+      "field": "quantity",
+      "message": "\"quantity\" must be a positive number"
+    }
+  ]
+}
+```

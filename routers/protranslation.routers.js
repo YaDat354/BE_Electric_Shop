@@ -7,17 +7,19 @@ const {
   updateProtranslation,
   deleteProtranslation,
 } = require("../controllers/protranslation.controllers");
+const { validate } = require('../middlewares/validation/requestValidator');
+const { idParamSchema, createProTranslationSchema, updateProTranslationSchema } = require('../middlewares/validation/schemas');
 
 const proTranslationRouter = express.Router();
 
-proTranslationRouter.post("/", createProTranslation);
+proTranslationRouter.post("/", validate(createProTranslationSchema), createProTranslation);
 proTranslationRouter.get("/translate", createtranslatedProduct);
 proTranslationRouter.get(
   "/:productid/:languagecode",
   getDetailtranslationbyProid_lang
 );
-proTranslationRouter.put("/:id", updateProtranslation);
-proTranslationRouter.delete("/:id", deleteProtranslation);
+proTranslationRouter.put("/:id", validate(idParamSchema, 'params'), validate(updateProTranslationSchema), updateProtranslation);
+proTranslationRouter.delete("/:id", validate(idParamSchema, 'params'), deleteProtranslation);
 
 module.exports = {
   proTranslationRouter,

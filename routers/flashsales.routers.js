@@ -6,14 +6,16 @@ const {
   updateFlashsale,
   deleteFlashsale,
 } = require("../controllers/flashsales.controllers");
+const { validate } = require('../middlewares/validation/requestValidator');
+const { idParamSchema, createFlashsaleSchema, updateFlashsaleSchema } = require('../middlewares/validation/schemas');
 
 const flashsalesRouter = express.Router();
 
-flashsalesRouter.post("/", createFlashsale);
+flashsalesRouter.post("/", validate(createFlashsaleSchema), createFlashsale);
 flashsalesRouter.get("/", getAllFlashsales);
-flashsalesRouter.get("/:id", getFlashsaleById);
-flashsalesRouter.put("/:id", updateFlashsale);
-flashsalesRouter.delete("/:id", deleteFlashsale);
+flashsalesRouter.get("/:id", validate(idParamSchema, 'params'), getFlashsaleById);
+flashsalesRouter.put("/:id", validate(idParamSchema, 'params'), validate(updateFlashsaleSchema), updateFlashsale);
+flashsalesRouter.delete("/:id", validate(idParamSchema, 'params'), deleteFlashsale);
 
 module.exports = {
   flashsalesRouter,

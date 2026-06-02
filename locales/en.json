@@ -26,3 +26,4 @@
 	"promotion.flash_sale": "⚡ Flash Sale! Save {{value}} on orders from {{min_order}}. Code: {{code}}",
 	"promotion.welcome": "Welcome to our store! Use code {{code}} on your first order"
 }
+

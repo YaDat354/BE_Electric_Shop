@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert('roles', [
+    await queryInterface.bulkInsert('Roles', [
       {
         name: 'Khách hàng',
         description: 'Người dùng bình thường',
@@ -35,6 +35,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('roles', null, {});
+    await queryInterface.bulkDelete('Roles', null, {});
   }
 };
+

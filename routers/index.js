@@ -1,5 +1,4 @@
 const express = require('express');
-
 const { categoriesRouter } = require('./categories.routers');
 const { usersRouter } = require('./users.routers');
 const { roleRouter } = require('./roles.routers');
@@ -13,7 +12,7 @@ const { orderRouter } = require('./orders.routers');
 const { orderdetailRouter } = require('./orderdetails.routers');
 const { imgproductRouter } = require('./imagesproduct.routers');
 const { imguserRouter } = require('./imagesuser.routers');
-const { paymentRouter } = require('./payment.routers');
+const paymentRouter = require('./payment.routers');
 const { notificationsRouter } = require('./notifications.router');
 const { proTranslationRouter } = require('./protranslation.routers');
 const { chatRouter } = require('./chatRouter');

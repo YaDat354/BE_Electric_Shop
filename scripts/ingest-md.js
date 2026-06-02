@@ -51,16 +51,14 @@ async function main() {
     //CẤU HÌNH CHUẨN GOOGLE (Dùng Enum TaskType)
     const embeddings = new GoogleGenerativeAIEmbeddings({
       apiKey: process.env.GOOGLE_API_KEY,
-      model: 'text-embedding-004',
-      taskType: TaskType.RETRIEVAL_DOCUMENT,
-      title: 'Badminton Guide'
+      model: 'gemini-embedding-001'
     });
 
     //TẢI VÀ XỬ LÝ
     console.log('Đang tải file');
     const markdown = await downloadMarkdown('rag-docs', 'guide.md');
     const docs = await splitMarkdown(markdown);
-    console.log(` Tìm thấy ${docs.length} đoạn.`);
+    console.log(`Tìm thấy ${docs.length} đoạn.`);
 
     //LƯU VECTOR
     console.log('Đang lưu');

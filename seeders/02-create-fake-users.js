@@ -14,7 +14,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'users',
+      'Users',
       [
         {
           name: 'Nguyễn Văn A',
@@ -88,6 +88,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('users', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
   }
 };
+

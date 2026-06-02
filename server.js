@@ -1,61 +1,54 @@
-require('dotenv').config();
-
 const express = require('express');
 const path = require('path');
 const http = require('http');
-const cors = require('cors');
 const { Server } = require('socket.io');
-
 const { sequelize } = require('./models');
 const { rootRouter } = require('./routers');
-
-const socketService = require('./services/socket.service');
-// const chatbotService = require('./services/chatbot');
-
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');
 const app = express();
+const cors = require('cors');
+const chatbotService = require('./services/chatbot');
+
+require('dotenv').config();
 
 app.use(cors());
+// cài ứng dụng sử dụng kiểu json
 app.use(express.json());
 
-// Static folder
+// cài đặt static file
 const publicPathDirectory = path.join(__dirname, './public');
 app.use(express.static(publicPathDirectory));
 
-// API routes
-app.use(['/api', '/api/v1'], rootRouter);
+// cài đặt router
+app.use('/api/v1', rootRouter);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Optional homepage
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
-
-// Create HTTP server
+// Tạo http server từ Express App
 const httpServer = http.createServer(app);
 
-// Initialize Socket.io
+// Khởi tạo Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: '*',
+    origin: '.', // Cấu hình CORS cho phép Frontend kết nổi
     methods: ['GET', 'POST']
   }
 });
 
-// Socket connection
+// Xử lý logic kết nối Socket
+const socketService = require('./services/socket.service');
+
 socketService.connection(io);
 
-// Start server
+// Lắng nghe trên httpServer thay vì app
 const PORT = 3000;
-
 httpServer.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-
   try {
     await sequelize.authenticate();
-    console.log('Connected to MySQL successfully.');
-
+    console.log('Kết nối thành công đến cơ sở dữ liệu MySQL.');
     // await chatbotService.initVectorStore();
-
   } catch (error) {
-    console.error('Cannot connect to MySQL:', error);
+    console.error('Không thể kết nối đến cơ sở dữ liệu MySQL:', error);
   }
 });

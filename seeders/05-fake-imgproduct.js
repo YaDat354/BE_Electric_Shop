@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'imagesproducts',
+      'ImagesProducts',
       [
         {
           productid: 1,
@@ -207,6 +207,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('imagesproducts', null, {});
+    await queryInterface.bulkDelete('ImagesProducts', null, {});
   }
 };
+

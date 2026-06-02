@@ -13,11 +13,11 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'products',
+      'Products',
       [
         {
           categoriesid: 1,
-          price: 4309000,
+          price: 23990000,
           brand: 'Samsung',
           quantity: 20,
           createdAt: new Date(),
@@ -25,47 +25,39 @@ module.exports = {
         },
         {
           categoriesid: 1,
-          price: 599000,
-          brand: 'Samsung',
+          price: 19990000,
+          brand: 'Apple',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           categoriesid: 1,
-          price: 4599000,
-          brand: 'OPPO',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 1,
-          price: 950000,
-          brand: 'Vivo',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 1,
-          price: 1590000,
+          price: 12990000,
           brand: 'Xiaomi',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          categoriesid: 2,
-          price: 649000,
-          brand: 'Lenovo',
+          categoriesid: 1,
+          price: 8990000,
+          brand: 'Oppo',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 1,
+          price: 7490000,
+          brand: 'Vivo',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           categoriesid: 2,
-          price: 2799000,
+          price: 18990000,
           brand: 'Dell',
           quantity: 20,
           createdAt: new Date(),
@@ -73,7 +65,7 @@ module.exports = {
         },
         {
           categoriesid: 2,
-          price: 840000,
+          price: 21490000,
           brand: 'HP',
           quantity: 20,
           createdAt: new Date(),
@@ -81,119 +73,135 @@ module.exports = {
         },
         {
           categoriesid: 2,
-          price: 2150000,
-          brand: 'Acer',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 2,
-          price: 1325000,
+          price: 32990000,
           brand: 'ASUS',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          categoriesid: 3,
-          price: 129000,
+          categoriesid: 2,
+          price: 28990000,
           brand: 'Lenovo',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          categoriesid: 3,
-          price: 130000,
-          brand: 'Samsung',
+          categoriesid: 2,
+          price: 25990000,
+          brand: 'Acer',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           categoriesid: 3,
-          price: 150000,
-          brand: 'Amazon',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 3,
-          price: 150000,
-          brand: 'Huawei',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 3,
-          price: 130000,
-          brand: 'Alcatel',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 4,
-          price: 839000,
-          brand: 'Anker',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 4,
-          price: 789000,
-          brand: 'Baseus',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 4,
-          price: 145000,
-          brand: 'UGREEN',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 4,
-          price: 650000,
-          brand: 'Logitech',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 4,
-          price: 699000,
+          price: 1990000,
           brand: 'Sony',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          categoriesid: 5,
-          price: 160000,
+          categoriesid: 3,
+          price: 3490000,
+          brand: 'JBL',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 3,
+          price: 2490000,
+          brand: 'Anker',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 3,
+          price: 1590000,
+          brand: 'Edifier',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 3,
+          price: 2790000,
+          brand: 'Marshall',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 4,
+          price: 1690000,
           brand: 'Xiaomi',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          categoriesid: 5,
-          price: 270000,
+          categoriesid: 4,
+          price: 2390000,
+          brand: 'Aqara',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 4,
+          price: 1290000,
           brand: 'TP-Link',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
+          categoriesid: 4,
+          price: 790000,
+          brand: 'EZVIZ',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 4,
+          price: 990000,
+          brand: 'Google',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
           categoriesid: 5,
-          price: 280000,
+          price: 5890000,
+          brand: 'Panasonic',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 5,
+          price: 7490000,
+          brand: 'Sharp',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 5,
+          price: 4690000,
+          brand: 'Electrolux',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 5,
+          price: 2190000,
           brand: 'Philips',
           quantity: 20,
           createdAt: new Date(),
@@ -201,31 +209,15 @@ module.exports = {
         },
         {
           categoriesid: 5,
-          price: 245000,
-          brand: 'Xiaomi',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 5,
-          price: 869000,
-          brand: 'Google',
+          price: 3190000,
+          brand: 'Tefal',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           categoriesid: 6,
-          price: 120000,
-          brand: 'UGREEN',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 6,
-          price: 180000,
+          price: 690000,
           brand: 'Anker',
           quantity: 20,
           createdAt: new Date(),
@@ -233,24 +225,32 @@ module.exports = {
         },
         {
           categoriesid: 6,
-          price: 60000,
+          price: 390000,
+          brand: 'Ugreen',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 6,
+          price: 299000,
+          brand: 'Sandisk',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 6,
+          price: 1490000,
+          brand: 'Xiaomi',
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          categoriesid: 6,
+          price: 990000,
           brand: 'Logitech',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 6,
-          price: 1390000,
-          brand: 'Razer',
-          quantity: 20,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          categoriesid: 6,
-          price: 2590000,
-          brand: 'Sony',
           quantity: 20,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -267,6 +267,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('products', null, {});
+    await queryInterface.bulkDelete('Products', null, {});
   }
 };
+

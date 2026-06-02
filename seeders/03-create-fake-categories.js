@@ -13,41 +13,41 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'categories',
+      'Categories',
       [
         {
           name: 'Smartphones',
-          description: 'Điện thoại thông minh từ các thương hiệu hàng đầu, phù hợp cho liên lạc, giải trí và làm việc.',
+          description: 'Dien thoai thong minh chinh hang voi da dang phan khuc va thuong hieu.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Laptops',
-          description: 'Laptop cấu hình đa dạng cho học tập, văn phòng và giải trí với thiết kế mỏng nhẹ.',
+          description: 'Laptop cho hoc tap, van phong va gaming voi cau hinh toi uu.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Tablets',
-          description: 'Máy tính bảng tiện dụng, màn hình sắc nét và pin lâu cho nhu cầu xem phim, học online và đọc sách.',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          name: 'Accessories',
-          description: 'Phụ kiện điện tử thiết yếu như sạc, tai nghe, chuột, bàn phím và cáp kết nối.',
+          name: 'Audio',
+          description: 'Thiet bi am thanh ca nhan nhu tai nghe, loa va phu kien ghi am.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Smart Home',
-          description: 'Thiết bị nhà thông minh giúp điều khiển đèn, camera, âm thanh và các thiết bị gia dụng.',
+          description: 'San pham nha thong minh giup tu dong hoa va tiet kiem nang luong.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Audio & Peripherals',
-          description: 'Thiết bị âm thanh và phụ kiện chơi game, từ tai nghe đến soundbar và bàn phím.',
+          name: 'Home Appliances',
+          description: 'Do gia dung dien may phuc vu nhu cau sinh hoat hang ngay.',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: 'Accessories',
+          description: 'Phu kien cong nghe nhu cap sac, cap ket noi, pin du phong va them nho.',
           createdAt: new Date(),
           updatedAt: new Date()
         }
@@ -63,6 +63,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('categories', null, {});
+    await queryInterface.bulkDelete('Categories', null, {});
   }
 };
+
