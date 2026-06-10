@@ -19,10 +19,10 @@ async function createAdmin() {
     console.log('✅ Connected to database');
 
     // Tìm roleid của Quản trị viên
-    const [roles] = await sequelize.query("SELECT id, name FROM \"Roles\" ORDER BY id");
+    const [roles] = await sequelize.query('SELECT id, name FROM "Roles" ORDER BY id');
     console.log('Roles in DB:', roles);
 
-    const adminRole = roles.find(r => r.name === 'Quản trị viên') || roles.find(r => r.id === 2);
+    const adminRole = roles.find((r) => r.name === 'Quản trị viên') || roles.find((r) => r.id === 2);
     if (!adminRole) {
       console.error('❌ Không tìm thấy role Quản trị viên. Hãy chạy seeders trước.');
       process.exit(1);
@@ -32,16 +32,13 @@ async function createAdmin() {
     const hashedPassword = bcrypt.hashSync('admin123', 10);
 
     // Kiểm tra nếu admin đã tồn tại
-    const [existing] = await sequelize.query(
-      `SELECT id, username FROM "Users" WHERE username = 'admin'`
-    );
+    const [existing] = await sequelize.query(`SELECT id, username FROM "Users" WHERE username = 'admin'`);
 
     if (existing.length > 0) {
       console.log(`⚠️  Tài khoản admin đã tồn tại (id=${existing[0].id}). Đang cập nhật mật khẩu...`);
-      await sequelize.query(
-        `UPDATE "Users" SET password = :password, roleid = :roleid, updatedAt = NOW() WHERE username = 'admin'`,
-        { replacements: { password: hashedPassword, roleid: adminRole.id } }
-      );
+      await sequelize.query(`UPDATE "Users" SET password = :password, roleid = :roleid, updatedAt = NOW() WHERE username = 'admin'`, {
+        replacements: { password: hashedPassword, roleid: adminRole.id }
+      });
       console.log('✅ Đã cập nhật mật khẩu admin thành công!');
     } else {
       await sequelize.query(

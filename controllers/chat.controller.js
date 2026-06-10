@@ -118,7 +118,16 @@ Chỉ trả về JSON, không thêm gì khác.
     return JSON.parse(cleaned);
   } catch (error) {
     console.error('Error in classifyQuestion:', error.message);
-    return { route: 'guide_only', intent: 'general_query', languageCode: 'vi', minPrice: null, maxPrice: null, productName: null, productId: null, style: null };
+    return {
+      route: 'guide_only',
+      intent: 'general_query',
+      languageCode: 'vi',
+      minPrice: null,
+      maxPrice: null,
+      productName: null,
+      productId: null,
+      style: null
+    };
   }
 }
 async function handleChat(req, res) {

@@ -246,11 +246,9 @@ const googleLogin = async (req, res) => {
         phonenumber: null
       });
     }
-    const token = jwt.sign(
-      { username: user.username, roleid: user.roleid, userid: user.id },
-      process.env.JWT_SECRET || 'shopeaseweb',
-      { expiresIn: 60 * 60 * 24 * 7 }
-    );
+    const token = jwt.sign({ username: user.username, roleid: user.roleid, userid: user.id }, process.env.JWT_SECRET || 'shopeaseweb', {
+      expiresIn: 60 * 60 * 24 * 7
+    });
     res.status(200).send({ message: 'Login successfully', token });
   } catch (error) {
     res.status(500).send({ message: 'Internal server error', error });
