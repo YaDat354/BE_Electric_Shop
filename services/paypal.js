@@ -45,7 +45,7 @@ const PaymentPaypal = async (orderid, totalprice, returnurl, res) => {
         cancel_url: `http://localhost:3030/paymentfailed?orderId=${orderid}`,
         shipping_preference: 'NO_SHIPPING', // Không yêu cầu địa chỉ giao hàng
         user_action: 'PAY_NOW', // Hiển thị nút thanh toán ngay
-        brand_name: 'BadmintonGear' // Tên thương hiệu của bạn
+        brand_name: 'ShopEase' // Tên thương hiệu của bạn
       }
     })
   });

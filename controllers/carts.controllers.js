@@ -49,7 +49,7 @@ const getAllCartsbyUserId = async (req, res) => {
     });
     res.status(200).send(cartsList);
   } catch (error) {
-    res.status;
+    res.status(500).send(error);
   }
 };
 

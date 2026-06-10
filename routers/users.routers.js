@@ -6,6 +6,7 @@ const {
   updateUsers,
   deleteUsers,
   login,
+  googleLogin,
   getDetailUsersByUsername,
   changePassword,
   forgotPassword,
@@ -36,6 +37,7 @@ const usersRouter = express.Router();
  */
 usersRouter.post('/', validate(createUserSchema), createUsers);
 usersRouter.post('/login', validate(loginSchema), login);
+usersRouter.post('/google-login', googleLogin);
 usersRouter.post('/changepass', authenticate, validate(changePasswordSchema), changePassword);
 usersRouter.post('/forgotpass', validate(forgotPasswordSchema), forgotPassword);
 usersRouter.get('/', getAllUsers);

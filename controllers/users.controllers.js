@@ -28,22 +28,29 @@ const createUsers = async (req, res) => {
 
 const login = async (req, res) => {
   const { username, password } = req.body;
-  const user = await Users.findOne({
-    where: { username }
-  });
-  const isAuth = bcrypt.compareSync(password, user.password);
-  if (isAuth) {
-    const token = jwt.sign({ username: user.username, roleid: user.roleid, userid: user.id }, 'badmintonweb', {
-      expiresIn: 60 * 60
+  try {
+    const user = await Users.findOne({
+      where: { username }
     });
-    res.status(200).send({
-      message: 'Login successfully',
-      token
-    });
-  } else {
-    res.status(401).send({
-      message: 'Login failed'
-    });
+    if (!user) {
+      return res.status(401).send({ message: 'Login failed' });
+    }
+    const isAuth = bcrypt.compareSync(password, user.password);
+    if (isAuth) {
+      const token = jwt.sign({ username: user.username, roleid: user.roleid, userid: user.id }, process.env.JWT_SECRET || 'shopeaseweb', {
+        expiresIn: 60 * 60 * 24 * 7
+      });
+      res.status(200).send({
+        message: 'Login successfully',
+        token
+      });
+    } else {
+      res.status(401).send({
+        message: 'Login failed'
+      });
+    }
+  } catch (error) {
+    res.status(500).send({ message: 'Internal server error', error });
   }
 };
 
@@ -217,6 +224,39 @@ const getUsersByRoleId = async (req, res) => {
   }
 };
 
+const googleLogin = async (req, res) => {
+  const { email, name, googleId } = req.body;
+  if (!email || !googleId) {
+    return res.status(400).send({ message: 'Missing email or googleId' });
+  }
+  try {
+    let user = await Users.findOne({ where: { email } });
+    if (!user) {
+      // Tạo user mới từ Google account
+      const salt = bcrypt.genSaltSync(10);
+      const hashedPassword = bcrypt.hashSync(googleId, salt); // dùng googleId làm placeholder password
+      user = await Users.create({
+        name: name || email.split('@')[0],
+        username: email,
+        email,
+        password: hashedPassword,
+        roleid: 1,
+        gender: null,
+        address: null,
+        phonenumber: null
+      });
+    }
+    const token = jwt.sign(
+      { username: user.username, roleid: user.roleid, userid: user.id },
+      process.env.JWT_SECRET || 'shopeaseweb',
+      { expiresIn: 60 * 60 * 24 * 7 }
+    );
+    res.status(200).send({ message: 'Login successfully', token });
+  } catch (error) {
+    res.status(500).send({ message: 'Internal server error', error });
+  }
+};
+
 module.exports = {
   createUsers,
   getAllUsers,
@@ -224,6 +264,7 @@ module.exports = {
   updateUsers,
   deleteUsers,
   login,
+  googleLogin,
   getDetailUsersByUsername,
   changePassword,
   forgotPassword,

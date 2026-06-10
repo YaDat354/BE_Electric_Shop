@@ -497,4 +497,3 @@ module.exports = {
     await queryInterface.bulkDelete('Pro_translations', null, {});
   }
 };
-

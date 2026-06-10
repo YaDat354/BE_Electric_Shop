@@ -1,3 +1,5 @@
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
+
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -9,8 +11,6 @@ const swaggerSpec = require('./config/swagger');
 const app = express();
 const cors = require('cors');
 const chatbotService = require('./services/chatbot');
-
-require('dotenv').config();
 
 app.use(cors());
 // cài ứng dụng sử dụng kiểu json
@@ -30,7 +30,7 @@ const httpServer = http.createServer(app);
 // Khởi tạo Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: '.', // Cấu hình CORS cho phép Frontend kết nổi
+    origin: '*',
     methods: ['GET', 'POST']
   }
 });

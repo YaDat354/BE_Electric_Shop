@@ -34,7 +34,7 @@ const routingModel = new ChatGoogleGenerativeAI({
 
 //PROMPT PHÂN LOẠI CÂU HỎI
 const routingPrompt = ChatPromptTemplate.fromTemplate(`
-Bạn là hệ thống phân loại câu hỏi cho shop cầu lông. Phân tích câu hỏi và trả về JSON với cấu trúc sau:
+Bạn là hệ thống phân loại câu hỏi cho shop thương mại điện tử. Phân tích câu hỏi và trả về JSON với cấu trúc sau:
 
 {{
   "route": "guide_only" | "product_db" | "hybrid",
@@ -98,28 +98,27 @@ Câu hỏi: {question}
 Chỉ trả về JSON thuần, KHÔNG thêm giải thích.
 `);
 async function classifyQuestion(question) {
+  const axios = require('axios');
+  const prompt = `
+Bạn là hệ thống phân loại câu hỏi. Trả về JSON thuần với cấu trúc:
+{"route":"guide_only"|"product_db"|"hybrid","intent":"policy_question"|"price_range_query"|"stock_query"|"style_recommendation"|"general_query","languageCode":"vi"|"en","minPrice":number|null,"maxPrice":number|null,"productName":string|null,"productId":number|null,"style":string|null}
+
+Câu hỏi: ${question}
+Chỉ trả về JSON, không thêm gì khác.
+  `.trim();
+
   try {
-    const chain = routingPrompt.pipe(routingModel).pipe(new StringOutputParser());
-    const result = await chain.invoke({ question });
-
-    console.log('Routing result (raw):', result);
-
-    const parsed = JSON.parse(result);
-    console.log('Routing result (parsed):', parsed);
-
-    return parsed;
+    const res = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GOOGLE_API_KEY}`,
+      { contents: [{ parts: [{ text: prompt }] }] },
+      { headers: { 'Content-Type': 'application/json' } }
+    );
+    const raw = res.data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '{}';
+    const cleaned = raw.replace(/```json\n?|\n?```/g, '').trim();
+    return JSON.parse(cleaned);
   } catch (error) {
-    console.error('Error in classifyQuestion:', error);
-    return {
-      route: 'guide_only',
-      intent: 'general_query',
-      languageCode: 'vi',
-      minPrice: null,
-      maxPrice: null,
-      productName: null,
-      productId: null,
-      style: null
-    };
+    console.error('Error in classifyQuestion:', error.message);
+    return { route: 'guide_only', intent: 'general_query', languageCode: 'vi', minPrice: null, maxPrice: null, productName: null, productId: null, style: null };
   }
 }
 async function handleChat(req, res) {
@@ -150,30 +149,8 @@ async function handleChat(req, res) {
     let product_context = [];
 
     //TÌM KIẾM GUIDE
-    if (routing.route === 'guide_only' || routing.route === 'hybrid') {
-      console.log('\n[RAG] Searching guide.md...');
-      try {
-        const vectorStore = new SupabaseVectorStore(embeddings, {
-          client: supabase,
-          tableName: 'documents',
-          queryName: 'match_documents'
-        });
-
-        const docs = await vectorStore.similaritySearch(question, 5);
-        console.log(`[RAG] Found: ${docs.length} chunks from guide.md`);
-
-        if (docs.length > 0) {
-          guide_context = docs.map((d) => d.pageContent).join('\n\n');
-          console.log('[RAG] First chunk preview:', docs[0].pageContent.substring(0, 100) + '...');
-        } else {
-          console.log('[RAG] No matches found in guide.md');
-        }
-      } catch (ragError) {
-        console.error('[RAG] Error searching vector store:', ragError.message);
-        console.warn('[RAG] Falling back to product_db only');
-        guide_context = '';
-      }
-    }
+    // RAG (SupabaseVectorStore) disabled - documents table not yet populated
+    // guide_context remains '' (empty string)
 
     //TÌM KIẾM DATABASE (nếu route là product_db hoặc hybrid)
     if (routing.route === 'product_db' || routing.route === 'hybrid') {
@@ -247,7 +224,7 @@ async function handleChat(req, res) {
       }
     }
 
-    if (!guide_context && product_context.length === 0) {
+    if (!guide_context && product_context.length === 0 && routing.intent !== 'general_query' && routing.intent !== 'policy_question') {
       console.log('\n[RESULT] No context found from both sources');
 
       let answer = '';
@@ -279,7 +256,7 @@ async function handleChat(req, res) {
     console.log(`[ANSWER] Product context: ${product_context.length} items`);
 
     const prompt = ChatPromptTemplate.fromTemplate(`
-Bạn là trợ lý tư vấn thân thiện và chuyên nghiệp của Shop Cầu Lông.
+Bạn là trợ lý tư vấn thân thiện và chuyên nghiệp của Shop thương mại điện tử.
 
 === THÔNG TIN CÓ SẴN ===
 
@@ -362,25 +339,33 @@ Bạn là trợ lý tư vấn thân thiện và chuyên nghiệp của Shop Cầ
             .join('\n')}\n`
         : '(Không có sản phẩm từ kho)';
 
-    const chain = RunnableSequence.from([
-      {
-        guide_context_section: () => guide_context_section,
-        product_context_section: () => product_context_section,
-        question: () => question
-      },
-      prompt,
-      chatModel,
-      new StringOutputParser()
-    ]);
+    const axios = require('axios');
+
+    const finalPromptText = `
+Bạn là trợ lý tư vấn thân thiện và chuyên nghiệp của Shop thương mại điện tử.
+
+=== THÔNG TIN CÓ SẴN ===
+${guide_context_section}
+${product_context_section}
+
+=== CÂU HỎI ===
+${question}
+
+=== TRẢ LỜI ===
+    `.trim();
 
     let answer = '';
     try {
-      answer = await chain.invoke({ question });
+      const geminiRes = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GOOGLE_API_KEY}`,
+        { contents: [{ parts: [{ text: finalPromptText }] }] },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      answer = geminiRes.data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Xin lỗi, không có phản hồi.';
       console.log('\n[ANSWER] Generated:', answer.substring(0, 200) + '...');
     } catch (chainError) {
-      console.error('[ANSWER] Error generating response from chain:', chainError.message);
-      console.warn('[ANSWER] Using fallback response');
-      answer = 'Xin lỗi, hiện tại hệ thống gặp sự cố kỹ thuật. Vui lòng liên hệ shop để được hỗ trợ: Hotline 0909-xxx-xxx';
+      console.error('[ANSWER] Error generating response:', chainError.message);
+      answer = 'Xin lỗi, hiện tại hệ thống gặp sự cố kỹ thuật. Vui lòng liên hệ shop để được hỗ trợ.';
     }
 
     //TẠO KẾT QUẢ VÀ LOGGING TÓM TẮT

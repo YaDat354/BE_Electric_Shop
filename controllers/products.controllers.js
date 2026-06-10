@@ -8,14 +8,12 @@ const createProducts = async (req, res) => {
     const product = await Products.create({ categoriesid, price, brand, quantity });
 
     if (languagecode && name) {
-      await Pro_translation.create(
-        {
-          productid: product.id,
-          languagecode,
-          name,
-          description: description || null
-        },
-      );
+      await Pro_translation.create({
+        productid: product.id,
+        languagecode,
+        name,
+        description: description || null
+      });
     }
 
     const created = await Products.findOne({
@@ -176,7 +174,7 @@ const updateProducts = async (req, res) => {
 
     if (languagecode && (name !== undefined || description !== undefined)) {
       const trans = await Pro_translation.findOne({
-        where: { productid: id, languagecode },
+        where: { productid: id, languagecode }
       });
 
       if (trans) {
@@ -184,24 +182,22 @@ const updateProducts = async (req, res) => {
         if (description !== undefined) trans.description = description;
         await trans.save();
       } else {
-        await Pro_translation.create(
-          {
-            productid: id,
-            languagecode,
-            name: name || '',
-            description: description || null
-          },
-        );
+        await Pro_translation.create({
+          productid: id,
+          languagecode,
+          name: name || '',
+          description: description || null
+        });
       }
     }
-
 
     const updated = await Products.findOne({
       where: { id },
       include: [
         { model: Categories, as: 'cate', attributes: ['name'] },
         {
-          model: Pro_translation, as: 'translations',
+          model: Pro_translation,
+          as: 'translations',
           attributes: ['languagecode', 'name', 'description'],
           where: languagecode ? { languagecode } : undefined,
           required: false
@@ -211,7 +207,6 @@ const updateProducts = async (req, res) => {
 
     res.status(200).send(updated);
   } catch (error) {
-    
     res.status(500).send(error);
   }
 };
