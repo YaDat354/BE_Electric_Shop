@@ -1,6 +1,6 @@
-# Hướng Dẫn Chạy Dự Án BE_Badminton
+# Hướng Dẫn Chạy Dự Án BE_Electric Shop
 
-Đây là hướng dẫn chi tiết để thiết lập và chạy dự án Backend Badminton.
+Đây là hướng dẫn chi tiết để thiết lập và chạy dự án Backend Electric Shop.
 
 ## Yêu Cầu Hệ Thống
 
@@ -26,7 +26,7 @@ Mở file `.env` và cập nhật các biến cần thiết:
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
-DB_NAME=badminton_db
+DB_NAME=Electric Shop_db
 DB_PORT=3306
 
 # JWT Secret
@@ -52,7 +52,7 @@ Cập nhật file `config/config.json` với thông tin kết nối MySQL:
   "development": {
     "username": "root",
     "password": "your_password",
-    "database": "badminton_db",
+    "database": "Electric Shop_db",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
@@ -60,7 +60,7 @@ Cập nhật file `config/config.json` với thông tin kết nối MySQL:
   "test": {
     "username": "root",
     "password": "your_password",
-    "database": "badminton_test",
+    "database": "Electric Shop_test",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
@@ -68,7 +68,7 @@ Cập nhật file `config/config.json` với thông tin kết nối MySQL:
   "production": {
     "username": "root",
     "password": "your_password",
-    "database": "badminton_prod",
+    "database": "Electric Shop_prod",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
@@ -136,7 +136,7 @@ npx sequelize-cli db:create
 Hoặc tạo database thủ công bằng MySQL:
 
 ```sql
-CREATE DATABASE badminton_db;
+CREATE DATABASE Electric Shop_db;
 ```
 
 ### 8. Chạy Migration

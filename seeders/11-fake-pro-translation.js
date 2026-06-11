@@ -10,480 +10,480 @@ module.exports = {
       {
         productid: 1,
         languagecode: 'en',
-        name: 'Samsung Galaxy S Series Smartphone',
-        description: 'Flagship Android phone with premium display, high performance, and advanced camera system.',
+        name: 'Samsung Galaxy S24 Ultra',
+        description: 'Flagship Samsung smartphone featuring a 6.8-inch Dynamic AMOLED display, Snapdragon 8 Gen 3 processor, S Pen support, and a 200MP camera system.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 2,
         languagecode: 'en',
-        name: 'Apple iPhone Standard Model',
-        description: 'Reliable iOS smartphone with smooth ecosystem integration and long software support.',
+        name: 'Apple iPhone 15',
+        description: 'Apple smartphone with A16 Bionic chip, USB-C connectivity, advanced camera features, and long-term iOS support.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 3,
         languagecode: 'en',
-        name: 'Xiaomi Redmi 5G Smartphone',
-        description: 'Value-focused smartphone with large battery, fast charging, and practical camera setup.',
+        name: 'Xiaomi Redmi Note 13 5G',
+        description: 'Affordable 5G smartphone with AMOLED display, 108MP camera, and fast charging support.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 4,
         languagecode: 'en',
-        name: 'Oppo Mid-range Smartphone',
-        description: 'Stylish phone with balanced performance and portrait-focused camera features.',
+        name: 'OPPO Reno11 F 5G',
+        description: 'Mid-range smartphone with sleek design, portrait photography features, and long battery life.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 5,
         languagecode: 'en',
-        name: 'Vivo Entry Smartphone',
-        description: 'Affordable smartphone for everyday social media, calls, and online learning.',
+        name: 'vivo Y28',
+        description: 'Budget-friendly smartphone with large battery capacity and smooth daily performance.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 6,
         languagecode: 'en',
-        name: 'Dell Inspiron Laptop',
-        description: 'Mainstream laptop suitable for office work, web apps, and online meetings.',
+        name: 'Dell Inspiron 15 3530',
+        description: '15.6-inch productivity laptop powered by Intel Core processors, suitable for office work and study.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 7,
         languagecode: 'en',
-        name: 'HP Pavilion Laptop',
-        description: 'Slim laptop with modern design, good keyboard, and strong multitasking ability.',
+        name: 'HP Pavilion 15',
+        description: 'Versatile laptop with modern design, solid multitasking capabilities, and Full HD display.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 8,
         languagecode: 'en',
-        name: 'ASUS Gaming Laptop',
-        description: 'High-refresh gaming laptop with dedicated GPU for competitive games and creative workloads.',
+        name: 'ASUS TUF Gaming F15',
+        description: 'Gaming laptop featuring Intel Core processors, NVIDIA RTX graphics, and a high-refresh-rate display.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 9,
         languagecode: 'en',
-        name: 'Lenovo IdeaPad Laptop',
-        description: 'Dependable productivity laptop with long battery life and lightweight build.',
+        name: 'Lenovo IdeaPad Slim 5',
+        description: 'Thin-and-light productivity laptop with excellent battery life and modern connectivity.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 10,
         languagecode: 'en',
-        name: 'Acer Swift Laptop',
-        description: 'Portable ultrabook for students and professionals with efficient power consumption.',
+        name: 'Acer Swift Go 14',
+        description: 'Portable ultrabook with OLED display and Intel Core Ultra processor.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 11,
         languagecode: 'en',
-        name: 'Sony In-ear Earbuds',
-        description: 'Comfortable wired earbuds with clear mids and stable call microphone quality.',
+        name: 'Sony MDR-EX155AP',
+        description: 'In-ear wired earphones with integrated microphone and balanced audio performance.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 12,
         languagecode: 'en',
-        name: 'JBL Portable Bluetooth Speaker',
-        description: 'Compact speaker with punchy bass and water-resistant outdoor-ready design.',
+        name: 'JBL Flip 6',
+        description: 'Portable Bluetooth speaker with powerful sound, IP67 water resistance, and long battery life.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 13,
         languagecode: 'en',
-        name: 'Anker Noise Cancelling Earbuds',
-        description: 'Wireless earbuds with hybrid ANC, long playback, and fast USB-C charging case.',
+        name: 'Soundcore Liberty 4 NC',
+        description: 'True wireless earbuds with adaptive noise cancellation and Hi-Res audio support.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 14,
         languagecode: 'en',
-        name: 'Edifier Computer Speakers',
-        description: 'Desktop speaker set tuned for balanced sound in music, movies, and work calls.',
+        name: 'Edifier R1280DB',
+        description: 'Powered bookshelf speakers with Bluetooth connectivity and balanced sound signature.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 15,
         languagecode: 'en',
-        name: 'Marshall Bluetooth Speaker',
-        description: 'Retro-style speaker with strong vocals, signature design, and multi-device pairing.',
+        name: 'Marshall Acton III',
+        description: 'Compact Bluetooth speaker with iconic Marshall design and room-filling sound.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 16,
         languagecode: 'en',
-        name: 'Xiaomi Smart Air Purifier',
-        description: 'Smart purifier with app control, real-time AQI tracking, and HEPA filtration.',
+        name: 'Xiaomi Smart Air Purifier 4',
+        description: 'Smart air purifier with HEPA filtration, OLED display, and app control.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 17,
         languagecode: 'en',
-        name: 'Aqara Smart Hub Kit',
-        description: 'Starter smart-home hub supporting scene automation and multi-sensor management.',
+        name: 'Aqara Hub M2',
+        description: 'Smart home hub supporting Zigbee devices, automation routines, and voice assistants.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 18,
         languagecode: 'en',
-        name: 'TP-Link Smart Plug',
-        description: 'Wi-Fi smart plug for remote power control, scheduling, and energy monitoring.',
+        name: 'TP-Link Tapo P110',
+        description: 'Smart Wi-Fi plug with energy monitoring and remote control via mobile app.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 19,
         languagecode: 'en',
-        name: 'EZVIZ Indoor Security Camera',
-        description: '1080p indoor camera with motion alerts, two-way audio, and night vision.',
+        name: 'EZVIZ H1C',
+        description: 'Indoor security camera with Full HD video, night vision, and motion detection alerts.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 20,
         languagecode: 'en',
-        name: 'Google Nest Mini Speaker',
-        description: 'Voice assistant speaker for reminders, smart controls, and hands-free music.',
+        name: 'Google Nest Mini (2nd Gen)',
+        description: 'Compact smart speaker with Google Assistant and smart-home voice control.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 21,
         languagecode: 'en',
-        name: 'Panasonic Inverter Microwave',
-        description: 'Inverter microwave oven with even heating and multiple quick cooking presets.',
+        name: 'Panasonic NN-ST65JBYUE',
+        description: 'Microwave oven with multiple cooking presets and inverter heating technology.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 22,
         languagecode: 'en',
-        name: 'Sharp Digital Rice Cooker',
-        description: 'Multi-mode rice cooker with stable temperature profile and easy-clean inner pot.',
+        name: 'Sharp KS-COM18V',
+        description: 'Digital rice cooker with multiple cooking modes and keep-warm functionality.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 23,
         languagecode: 'en',
-        name: 'Electrolux Electric Kettle',
-        description: 'Fast-boil electric kettle with auto shutoff and stainless-steel heating plate.',
+        name: 'Electrolux E5EK1-50ST',
+        description: 'Stainless steel electric kettle with fast boiling and automatic shutoff.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 24,
         languagecode: 'en',
-        name: 'Philips Handheld Garment Steamer',
-        description: 'Quick garment care solution with compact form for home and travel usage.',
+        name: 'Philips STH3020/16',
+        description: 'Portable handheld garment steamer for quick wrinkle removal at home or while traveling.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 25,
         languagecode: 'en',
-        name: 'Tefal Air Fryer',
-        description: 'Oil-reduced cooking appliance with digital presets and large family capacity.',
+        name: 'Tefal Easy Fry Essential EY1308',
+        description: 'Digital air fryer with multiple cooking programs and reduced-oil cooking.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 26,
         languagecode: 'en',
-        name: 'Anker 65W GaN Charger',
-        description: 'Compact fast charger with USB-C Power Delivery for phones, tablets, and laptops.',
+        name: 'Anker 735 Charger (Nano II 65W)',
+        description: 'Compact GaN charger with triple-port fast charging for phones, tablets, and laptops.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 27,
         languagecode: 'en',
-        name: 'Ugreen USB-C Cable',
-        description: 'Durable braided cable supporting fast charging and high-speed data sync.',
+        name: 'UGREEN USB-C to USB-C 100W Cable',
+        description: 'Braided USB-C cable supporting 100W Power Delivery fast charging and data transfer.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 28,
         languagecode: 'en',
-        name: 'SanDisk microSD Card',
-        description: 'Reliable memory card for phones, cameras, and portable gaming devices.',
+        name: 'SanDisk Ultra microSDXC 128GB',
+        description: 'High-speed microSD card suitable for smartphones, cameras, and portable gaming devices.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 29,
         languagecode: 'en',
-        name: 'Xiaomi 20000mAh Power Bank',
-        description: 'High-capacity power bank with dual output ports and smart safety protection.',
+        name: 'Xiaomi Redmi Power Bank 20000mAh',
+        description: 'High-capacity portable battery with dual USB output and fast charging support.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 30,
         languagecode: 'en',
-        name: 'Logitech Wireless Mouse',
-        description: 'Ergonomic wireless mouse with quiet clicks and long battery endurance.',
+        name: 'Logitech M331 Silent Plus',
+        description: 'Wireless mouse featuring silent clicks, ergonomic design, and long battery life.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+            {
         productid: 1,
         languagecode: 'vi',
-        name: 'Dien thoai Samsung Galaxy dong S',
-        description: 'Dien thoai Android cao cap voi man hinh dep, hieu nang manh va camera tien tien.',
+        name: 'Samsung Galaxy S24 Ultra',
+        description: 'Điện thoại flagship của Samsung với màn hình Dynamic AMOLED 6.8 inch, bút S Pen và hệ thống camera 200MP.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 2,
         languagecode: 'vi',
-        name: 'Dien thoai Apple iPhone ban tieu chuan',
-        description: 'Dien thoai iOS on dinh, toi uu he sinh thai va duoc cap nhat phan mem lau dai.',
+        name: 'Apple iPhone 15',
+        description: 'Điện thoại iOS với chip A16 Bionic, cổng USB-C và khả năng hỗ trợ cập nhật phần mềm lâu dài.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 3,
         languagecode: 'vi',
-        name: 'Dien thoai Xiaomi Redmi 5G',
-        description: 'Smartphone gia tot voi pin lon, sac nhanh va cau hinh phu hop nhu cau pho thong.',
+        name: 'Xiaomi Redmi Note 13 5G',
+        description: 'Điện thoại 5G giá tốt với màn hình AMOLED, camera 108MP và sạc nhanh.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 4,
         languagecode: 'vi',
-        name: 'Dien thoai Oppo tam trung',
-        description: 'Thiet ke dep, camera chan dung tot va hieu nang can bang cho su dung hang ngay.',
+        name: 'OPPO Reno11 F 5G',
+        description: 'Điện thoại tầm trung với thiết kế hiện đại, camera chân dung đẹp và pin bền bỉ.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 5,
         languagecode: 'vi',
-        name: 'Dien thoai Vivo pho thong',
-        description: 'Mau dien thoai de dung cho hoc tap, lien lac, giai tri co ban va mang xa hoi.',
+        name: 'vivo Y28',
+        description: 'Điện thoại phổ thông với pin dung lượng lớn và hiệu năng ổn định cho nhu cầu hằng ngày.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 6,
         languagecode: 'vi',
-        name: 'Laptop Dell Inspiron',
-        description: 'Laptop van phong on dinh, phu hop lam viec online, hoc tap va xu ly tai lieu.',
+        name: 'Dell Inspiron 15 3530',
+        description: 'Laptop văn phòng 15.6 inch phù hợp cho học tập, làm việc và họp trực tuyến.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 7,
         languagecode: 'vi',
-        name: 'Laptop HP Pavilion',
-        description: 'Thiet ke gon nhe, da nhiem tot, man hinh dep cho cong viec va giai tri.',
+        name: 'HP Pavilion 15',
+        description: 'Laptop đa năng với thiết kế hiện đại, màn hình Full HD và khả năng đa nhiệm tốt.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 8,
         languagecode: 'vi',
-        name: 'Laptop gaming ASUS',
-        description: 'Laptop choi game voi card do hoa rieng, tan so quet cao va tan nhiet hieu qua.',
+        name: 'ASUS TUF Gaming F15',
+        description: 'Laptop gaming trang bị card đồ họa RTX, màn hình tần số quét cao và hệ thống tản nhiệt hiệu quả.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 9,
         languagecode: 'vi',
-        name: 'Laptop Lenovo IdeaPad',
-        description: 'Laptop ben bi, pin trau, phu hop sinh vien va nhan vien van phong.',
+        name: 'Lenovo IdeaPad Slim 5',
+        description: 'Laptop mỏng nhẹ với thời lượng pin dài và hiệu năng phù hợp cho công việc hằng ngày.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 10,
         languagecode: 'vi',
-        name: 'Laptop Acer Swift',
-        description: 'Ultrabook nhe, sang trong, toi uu cho di chuyen va lam viec linh hoat.',
+        name: 'Acer Swift Go 14',
+        description: 'Ultrabook gọn nhẹ với màn hình OLED sắc nét và bộ xử lý Intel Core Ultra.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 11,
         languagecode: 'vi',
-        name: 'Tai nghe Sony in-ear',
-        description: 'Tai nghe co day gon nhe, am thanh ro rang va dam bao chat luong dam thoai.',
+        name: 'Sony MDR-EX155AP',
+        description: 'Tai nghe nhét tai có dây với micro tích hợp và chất lượng âm thanh cân bằng.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 12,
         languagecode: 'vi',
-        name: 'Loa Bluetooth JBL mini',
-        description: 'Loa di dong am bass manh, chong nuoc nhe va thich hop di du lich.',
+        name: 'JBL Flip 6',
+        description: 'Loa Bluetooth di động chống nước IP67 với âm thanh mạnh mẽ và pin lâu.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 13,
         languagecode: 'vi',
-        name: 'Tai nghe chong on Anker',
-        description: 'Tai nghe true wireless ho tro chong on chu dong va thoi luong pin dai.',
+        name: 'Soundcore Liberty 4 NC',
+        description: 'Tai nghe không dây hỗ trợ chống ồn chủ động thích ứng và âm thanh Hi-Res.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 14,
         languagecode: 'vi',
-        name: 'Loa vi tinh Edifier',
-        description: 'Loa de ban cho am thanh can bang, phu hop nghe nhac va hop truc tuyen.',
+        name: 'Edifier R1280DB',
+        description: 'Loa bookshelf tích hợp Bluetooth với chất âm cân bằng cho giải trí và làm việc.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 15,
         languagecode: 'vi',
-        name: 'Loa Marshall Bluetooth',
-        description: 'Loa thiet ke co dien, am thanh day dan va ket noi khong day on dinh.',
+        name: 'Marshall Acton III',
+        description: 'Loa Bluetooth mang phong cách cổ điển với âm thanh mạnh mẽ đặc trưng của Marshall.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 16,
         languagecode: 'vi',
-        name: 'May loc khong khi Xiaomi',
-        description: 'May loc thong minh dieu khien bang app, theo doi chat luong khong khi theo thoi gian thuc.',
+        name: 'Xiaomi Smart Air Purifier 4',
+        description: 'Máy lọc không khí thông minh với bộ lọc HEPA, màn hình OLED và điều khiển qua ứng dụng.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 17,
         languagecode: 'vi',
-        name: 'Bo trung tam nha thong minh Aqara',
-        description: 'Hub ket noi cac cam bien va thiet lap ngu canh tu dong trong nha.',
+        name: 'Aqara Hub M2',
+        description: 'Trung tâm điều khiển nhà thông minh hỗ trợ Zigbee và nhiều kịch bản tự động hóa.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 18,
         languagecode: 'vi',
-        name: 'O cam thong minh TP-Link',
-        description: 'Bat tat thiet bi tu xa, hen gio tu dong va theo doi dien nang tieu thu.',
+        name: 'TP-Link Tapo P110',
+        description: 'Ổ cắm thông minh Wi-Fi hỗ trợ điều khiển từ xa và theo dõi điện năng tiêu thụ.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 19,
         languagecode: 'vi',
-        name: 'Camera trong nha EZVIZ',
-        description: 'Camera giam sat Full HD co ghi hinh ban dem va dam thoai 2 chieu.',
+        name: 'EZVIZ H1C',
+        description: 'Camera giám sát trong nhà Full HD với ghi hình ban đêm và phát hiện chuyển động.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 20,
         languagecode: 'vi',
-        name: 'Loa tro ly ao Google Nest Mini',
-        description: 'Loa thong minh giup dieu khien nha thong minh va tim kiem thong tin bang giong noi.',
+        name: 'Google Nest Mini (Thế hệ 2)',
+        description: 'Loa thông minh tích hợp Google Assistant hỗ trợ điều khiển thiết bị bằng giọng nói.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 21,
         languagecode: 'vi',
-        name: 'Lo vi song Panasonic Inverter',
-        description: 'Lo vi song ham nong deu, tiet kiem dien va co nhieu che do nau nhanh.',
+        name: 'Panasonic NN-ST65JBYUE',
+        description: 'Lò vi sóng tích hợp nhiều chế độ nấu và công nghệ gia nhiệt hiệu quả.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 22,
         languagecode: 'vi',
-        name: 'Noi com dien tu Sharp',
-        description: 'Noi com da nang giu nhiet on dinh, de su dung va de ve sinh.',
+        name: 'Sharp KS-COM18V',
+        description: 'Nồi cơm điện tử đa chức năng với khả năng giữ ấm và nhiều chế độ nấu.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 23,
         languagecode: 'vi',
-        name: 'Am sieu toc Electrolux',
-        description: 'Am dun nuoc sieu toc voi tinh nang tu dong ngat an toan khi can nuoc.',
+        name: 'Electrolux E5EK1-50ST',
+        description: 'Ấm đun nước siêu tốc bằng thép không gỉ với tính năng tự ngắt an toàn.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 24,
         languagecode: 'vi',
-        name: 'Ban ui hoi nuoc cam tay Philips',
-        description: 'Ban ui hoi nuoc nho gon giup lam phang quan ao nhanh ma khong can cau ui lon.',
+        name: 'Philips STH3020/16',
+        description: 'Bàn ủi hơi nước cầm tay nhỏ gọn giúp làm phẳng quần áo nhanh chóng.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 25,
         languagecode: 'vi',
-        name: 'Noi chien khong dau Tefal',
-        description: 'Noi chien khong dau giup giam dau mo, co che do nau tu dong va dung tich lon.',
+        name: 'Tefal Easy Fry Essential EY1308',
+        description: 'Nồi chiên không dầu kỹ thuật số với nhiều chế độ nấu và giảm lượng dầu mỡ.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 26,
         languagecode: 'vi',
-        name: 'Cu sac nhanh Anker 65W GaN',
-        description: 'Cu sac cong suat cao nho gon, ho tro sac nhanh cho dien thoai va laptop.',
+        name: 'Anker 735 Charger (Nano II 65W)',
+        description: 'Củ sạc GaN 65W nhỏ gọn hỗ trợ sạc nhanh cho điện thoại, máy tính bảng và laptop.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 27,
         languagecode: 'vi',
-        name: 'Cap sac USB-C Ugreen',
-        description: 'Cap ben bi chong gay gap, truyen du lieu nhanh va ho tro sac nhanh.',
+        name: 'UGREEN USB-C to USB-C 100W Cable',
+        description: 'Cáp USB-C bọc dù hỗ trợ sạc nhanh Power Delivery 100W và truyền dữ liệu tốc độ cao.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 28,
         languagecode: 'vi',
-        name: 'The nho SanDisk microSD',
-        description: 'The nho toc do cao, phu hop camera, dien thoai va thiet bi ghi hinh.',
+        name: 'SanDisk Ultra microSDXC 128GB',
+        description: 'Thẻ nhớ tốc độ cao phù hợp cho điện thoại, camera và thiết bị lưu trữ di động.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 29,
         languagecode: 'vi',
-        name: 'Pin du phong Xiaomi 20000mAh',
-        description: 'Pin du phong dung luong lon voi nhieu cong ra va co che bao ve an toan.',
+        name: 'Xiaomi Redmi Power Bank 20000mAh',
+        description: 'Pin dự phòng dung lượng lớn hỗ trợ nhiều cổng sạc và cơ chế bảo vệ an toàn.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         productid: 30,
         languagecode: 'vi',
-        name: 'Chuot khong day Logitech',
-        description: 'Chuot khong day cong thai hoc, click em va thoi gian su dung pin ben bi.',
+        name: 'Logitech M331 Silent Plus',
+        description: 'Chuột không dây với nút bấm yên tĩnh, thiết kế công thái học và pin bền bỉ.',
         createdAt: new Date(),
         updatedAt: new Date()
       }
